@@ -1,0 +1,9 @@
+
+
+RewriteCond %{QUERY_STRING} PHPSESSID=.*$
+RewriteRule .* %{REQUEST_URI}? [R=301,L]
+
+RewriteEngine On
+
+
+RewriteRule  ^ac_(.*)(.php|.html)$  control.php?_estebin=$1\&_esteext=$2\&c=$0\&_ESTEAC=ac&%{QUERY_STRING} [NC,L]
